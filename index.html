@@ -1,7 +1,244 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1> Welcome !!!! to my personal page !!!!</h1>
-    <p> Hosted on GitHub Pages </p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sehyun Ryu</title>
+  <meta name="description" content="Personal page of Sehyun Ryu — Computer Science student at Seoul National University." />
+  <style>
+    :root {
+      --bg: #0e1116;
+      --surface: #ffffff;
+      --muted: #5b6472;
+      --text: #1a1f29;
+      --accent: #e8901a;
+      --accent-2: #f4b860;
+      --border: #e6e8ec;
+      --max: 920px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background: #f7f8fa;
+    }
+    a { color: var(--accent); }
+    img { max-width: 100%; display: block; }
+
+    /* Nav */
+    header.nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(14,17,22,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      max-width: var(--max); margin: 0 auto; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { color: #fff; font-weight: 700; letter-spacing: 0.3px; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .nav-links a { color: #c9d1dc; text-decoration: none; font-size: 0.92rem; }
+    .nav-links a:hover { color: var(--accent-2); }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(1200px 500px at 70% -10%, #2a3242 0%, var(--bg) 60%);
+      color: #fff; padding: 64px 20px 72px;
+    }
+    .hero-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+    }
+    .hero-photo {
+      width: 200px; height: 200px; border-radius: 50%;
+      object-fit: cover; border: 4px solid var(--accent);
+      box-shadow: 0 8px 30px rgba(232,144,26,0.25);
+      flex-shrink: 0;
+    }
+    .hero-text { flex: 1; min-width: 260px; }
+    .eyebrow { color: var(--accent-2); text-transform: uppercase; letter-spacing: 2px; font-size: 0.78rem; margin: 0 0 8px; }
+    .hero h1 { margin: 0 0 6px; font-size: 2.6rem; line-height: 1.1; }
+    .hero .role { color: #c9d1dc; margin: 0 0 18px; font-size: 1.05rem; }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 10px 18px; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.92rem;
+    }
+    .btn-primary { background: var(--accent); color: #1a1f29; }
+    .btn-primary:hover { background: var(--accent-2); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: #fff; }
+    .btn-ghost:hover { border-color: var(--accent-2); color: var(--accent-2); }
+
+    /* Sections */
+    main { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+    section:last-child { border-bottom: none; }
+    .sec-label { color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 6px; }
+    h2 { font-size: 1.7rem; margin: 0 0 18px; }
+    h3 { margin: 0 0 4px; font-size: 1.1rem; }
+    p.lead { font-size: 1.08rem; color: #303746; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px; margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(16,24,40,0.04);
+    }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    ul.clean { padding-left: 20px; margin: 8px 0 0; }
+    ul.clean li { margin-bottom: 4px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .tag { background: #fff3e0; color: #a8650b; border: 1px solid #f3d6a8; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; }
+    .courses { display: flex; flex-wrap: wrap; gap: 10px; }
+    .course { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; font-weight: 600; }
+    .contact-list { list-style: none; padding: 0; margin: 0; }
+    .contact-list li { margin-bottom: 10px; }
+    .contact-list strong { display: inline-block; width: 90px; color: var(--muted); font-weight: 600; }
+
+    footer { background: var(--bg); color: #8b94a3; text-align: center; padding: 28px 20px; font-size: 0.88rem; }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-photo { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#top" class="brand">Sehyun Ryu</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#projects">Projects</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#ai">AI Usage</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <img class="hero-photo" src="assets/profile.jpg" alt="Photo of Sehyun Ryu" />
+      <div class="hero-text">
+        <p class="eyebrow">Seoul National University · Computer Science</p>
+        <h1>Sehyun Ryu</h1>
+        <p class="role">Computer Science student exploring software, systems, and the math behind them.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-ghost" href="https://github.com/ryucine" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- About -->
+    <section id="about">
+      <p class="sec-label">About Me</p>
+      <h2>Hello, I'm Sehyun.</h2>
+      <p class="lead">
+        I'm an undergraduate Computer Science student at Seoul National University. I enjoy
+        building things with code and digging into the fundamentals — algorithms, computer
+        architecture, and the mathematics that underpins them. I'm always looking for the next
+        problem to take apart and understand.
+      </p>
+    </section>
+
+    <!-- CV / Resume -->
+    <section id="cv">
+      <p class="sec-label">CV / Resume</p>
+      <h2>Background</h2>
+
+      <div class="card">
+        <h3>Education</h3>
+        <p class="meta">Seoul National University · B.S. in Computer Science (in progress)</p>
+        <p>Coursework in computer science fundamentals, mathematics, and software development.</p>
+      </div>
+
+      <div class="card">
+        <h3>Skills</h3>
+        <p class="meta">Edit this list to match your experience.</p>
+        <div class="tags">
+          <span class="tag">C / C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">Java</span>
+          <span class="tag">Git &amp; GitHub</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Experience</h3>
+        <ul class="clean">
+          <li>Coursework projects in C++ and Python at Seoul National University.</li>
+          <li><em>Add internships, research, or other experience here.</em></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <p class="sec-label">Projects &amp; Activities</p>
+      <h2>What I've worked on</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Project One</h3>
+          <p class="meta">Course / Personal</p>
+          <p>Short description of a project you've built. Replace this with a real one — what it
+            does, what you used, and what you learned.</p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p class="meta">Course / Personal</p>
+          <p>A second project or activity. Add the tech stack and your role so visitors can see
+            what you can do.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses">
+      <p class="sec-label">Courses</p>
+      <h2>Courses I plan to take</h2>
+      <div class="courses">
+        <div class="course">Algorithms</div>
+        <div class="course">Computer Architecture</div>
+        <div class="course">Introduction to Analysis 2</div>
+        <div class="course">Linear Algebra 2</div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <p class="sec-label">Contact</p>
+      <h2>Get in touch</h2>
+      <ul class="contact-list">
+        <li><strong>Email</strong> <a href="mailto:alexsehyunryu@gmail.com">alexsehyunryu@gmail.com</a></li>
+        <li><strong>GitHub</strong> <a href="https://github.com/ryucine" target="_blank" rel="noopener">github.com/ryucine</a></li>
+      </ul>
+    </section>
+
+    <!-- AI Usage -->
+    <section id="ai">
+      <p class="sec-label">AI Usage</p>
+      <h2>How AI helped build this site</h2>
+      <div class="card">
+        <p><strong>Tool:</strong> Claude Code</p>
+        <p><strong>Prompt:</strong> "Build a static personal website in the repo root with About Me,
+          CV, Projects, a courses section, and contact info. Keep it simple, responsive, accessible,
+          and compatible with GitHub Pages."</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Sehyun Ryu · Hosted on GitHub Pages</p>
+  </footer>
+</body>
 </html>
